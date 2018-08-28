@@ -12,7 +12,7 @@ import org.springframework.http.MediaType;
 
 @SpringBootApplication
 @RestController
-public class CalculatorApplication {
+public class GoTApplication {
 
 	@RequestMapping("/")
 	String hello() {
@@ -20,16 +20,16 @@ public class CalculatorApplication {
 	}
 
 	@GetMapping(value="/got", produces=MediaType.APPLICATION_JSON_VALUE)
-	public Map<Integer, String> got() {
-		HashMap<Integer, String> map = new HashMap<>();
-		map.put(1, "Vijay");
-		map.put(2, "Kavitha");
-		map.put(3, "Nihar");
-		map.put(4, "Nirav");
+	public Map<String, String> got() {
+		HashMap<String, String> map = new HashMap<>();
+		map.put("Daenerys Targaryen", "Emilia Clarke");
+		map.put("Arya Stark", "Maisie Williams");
+		map.put("Sansa Stark", "Sophie Turner");
+		map.put("Cersei Lannister", "Lena Headey");
 		return map;
  	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(CalculatorApplication.class, args);
+		SpringApplication.run(GoTApplication.class, args);
 	}
 }
